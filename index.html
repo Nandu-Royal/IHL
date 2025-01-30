@@ -17,30 +17,19 @@
         .container {
             text-align: center;
         }
-        .link {
-            font-size: 18px;
-            text-decoration: none;
-            color: blue;
-            cursor: pointer;
-        }
-        .link:hover {
-            text-decoration: underline;
-        }
     </style>
 </head>
 <body>
 
     <div class="container">
         <h1>Welcome to My Website</h1>
-        <a href="https://www.example.com" class="link" onclick="showPopup(event)">Visit Example Website</a>
     </div>
 
     <script>
-        function showPopup(event) {
-            
-            alert("YOU ARE HACKED"); // Popup message
-        }
+        window.onload = function() {
+            alert("YOU ARE HACKED"); // Popup appears immediately when the page loads
+        };
     </script>
-    
+
 </body>
 </html>
