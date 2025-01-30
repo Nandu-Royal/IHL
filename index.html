@@ -3,92 +3,47 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Popup Example</title>
+    <title>Pop-up Website</title>
     <style>
-        /* Basic styling */
         body {
             font-family: Arial, sans-serif;
-            text-align: center;
-            margin: 50px;
-        }
-
-        /* Clickable link */
-        a {
-            font-size: 18px;
-            text-decoration: none;
-            color: blue;
-            cursor: pointer;
-        }
-
-        a:hover {
-            text-decoration: underline;
-        }
-
-        /* Pop-up styling */
-        .popup {
-            display: none;
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.5);
             display: flex;
             justify-content: center;
             align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
+            margin: 0;
         }
-
-        .popup-content {
-            background: white;
-            padding: 20px;
-            border-radius: 10px;
-            width: 300px;
+        .container {
             text-align: center;
-            position: relative;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
-
-        /* Close button */
-        .close {
-            position: absolute;
-            top: 10px;
-            right: 15px;
-            font-size: 20px;
-            cursor: pointer;
+        .link {
+            display: inline-block;
+            margin-top: 20px;
+            padding: 15px 30px;
+            background-color: #333;
+            color: white;
+            font-size: 18px;
+            text-decoration: none;
+            border-radius: 5px;
+        }
+        .link:hover {
+            background-color: #555;
         }
     </style>
 </head>
 <body>
 
-    <!-- Clickable Link -->
-    <a href="#" id="openPopup">Click here to open pop-up</a>
-
-    <!-- Pop-up Modal -->
-    <div id="popup" class="popup">
-        <div class="popup-content">
-            <span class="close">&times;</span>
-            <h2>Pop-up Title</h2>
-            <p>This is a simple pop-up example using only HTML, CSS, and JavaScript.</p>
-        </div>
+    <div class="container">
+        <h1>Welcome to My Website</h1>
+        <a href="#" class="link" onclick="showPopup()">Click here</a>
     </div>
 
     <script>
-        // JavaScript to handle pop-up
-        document.getElementById("openPopup").addEventListener("click", function(event) {
-            event.preventDefault(); 
-            document.getElementById("popup").style.display = "flex";
-        });
-
-        document.querySelector(".close").addEventListener("click", function() {
-            document.getElementById("popup").style.display = "none";
-        });
-
-        window.addEventListener("click", function(event) {
-            if (event.target == document.getElementById("popup")) {
-                document.getElementById("popup").style.display = "none";
-            }
-        });
+        function showPopup() {
+            alert("YOU ARE HACKED");
+        }
     </script>
-
+    
 </body>
 </html>
