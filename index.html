@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Popup Example</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Clickable Link -->
+    <a href="#" id="openPopup">Click here to open pop-up</a>
+
+    <!-- Pop-up Modal -->
+    <div id="popup" class="popup">
+        <div class="popup-content">
+            <span class="close">&times;</span>
+            <h2>Pop-up Title</h2>
+            <p>This is a simple pop-up example using HTML, CSS, and JavaScript.</p>
+        </div>
+    </div>
+
+    <script>
+        // JavaScript to handle pop-up
+        document.getElementById("openPopup").addEventListener("click", function(event) {
+            event.preventDefault(); 
+            document.getElementById("popup").style.display = "block";
+        });
+
+        document.querySelector(".close").addEventListener("click", function() {
+            document.getElementById("popup").style.display = "none";
+        });
+
+        window.addEventListener("click", function(event) {
+            if (event.target == document.getElementById("popup")) {
+                document.getElementById("popup").style.display = "none";
+            }
+        });
+    </script>
+
+</body>
+</html>
