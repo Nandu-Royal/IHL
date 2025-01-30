@@ -4,7 +4,59 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Popup Example</title>
-    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Basic styling */
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 50px;
+        }
+
+        /* Clickable link */
+        a {
+            font-size: 18px;
+            text-decoration: none;
+            color: blue;
+            cursor: pointer;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        /* Pop-up styling */
+        .popup {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .popup-content {
+            background: white;
+            padding: 20px;
+            border-radius: 10px;
+            width: 300px;
+            text-align: center;
+            position: relative;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Close button */
+        .close {
+            position: absolute;
+            top: 10px;
+            right: 15px;
+            font-size: 20px;
+            cursor: pointer;
+        }
+    </style>
 </head>
 <body>
 
@@ -16,7 +68,7 @@
         <div class="popup-content">
             <span class="close">&times;</span>
             <h2>Pop-up Title</h2>
-            <p>This is a simple pop-up example using HTML, CSS, and JavaScript.</p>
+            <p>This is a simple pop-up example using only HTML, CSS, and JavaScript.</p>
         </div>
     </div>
 
@@ -24,7 +76,7 @@
         // JavaScript to handle pop-up
         document.getElementById("openPopup").addEventListener("click", function(event) {
             event.preventDefault(); 
-            document.getElementById("popup").style.display = "block";
+            document.getElementById("popup").style.display = "flex";
         });
 
         document.querySelector(".close").addEventListener("click", function() {
